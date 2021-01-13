@@ -60,4 +60,4 @@ printQuote();
 
 document
 	.getElementById("load-quote")
-	.addEventListener("click", printQuote, true);
+	.addEventListener("click", setInterval(printQuote, 5000), true);
