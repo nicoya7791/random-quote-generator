@@ -46,3 +46,17 @@ const quotes = [
 		profession: "Proffesional Boxer",
 	},
 ];
+
+const color = [
+	"#00ffff",
+	"#00bfff",
+	"#ff8000",
+	"#ff4d79",
+	"#ff4d79",
+	"#ff66ff",
+	"#669999",
+	"#006600",
+	"#996633",
+	"#660066",
+	"#2F2928",
+];

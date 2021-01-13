@@ -22,7 +22,14 @@ function getRandomQuote() {
 	let randonNumber = Math.floor(Math.random() * a + 1);
 	return quotes[randonNumber];
 }
+/***
+ * getRandomColor function
+ ***/
 
+function getRandomColor() {
+	let rNum = Math.floor(Math.random() * (color.length - 1) + 1);
+	return (document.body.style.backgroundColor = color[rNum]);
+}
 /***
  * `printQuote` function
  ***/
@@ -42,7 +49,7 @@ function printQuote() {
 		pQuote += `<span class="year">${randomQuoteObject.profession}</span>`;
 	}
 	pQuote += `</p>`;
-
+	getRandomColor();
 	return (document.getElementById("quote-box").innerHTML = pQuote);
 }
 printQuote();
