@@ -3,33 +3,26 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance:
-// Check the "Project Resources" section of the project instructions
-// Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
 //This function generates a random quote from the array in quotes.js
 function getRandomQuote() {
-	//Here i assign the length of the array to quote array.
-	let quoteLength = quotes.length - 1;
-	let randonNumber = Math.floor(Math.random() * quoteLength + 1);
+	//generate random number to to used as index of the objet in quotes array.
+	let randonNumber = Math.floor(Math.random() * quotes.length);
 	return quotes[randonNumber];
 }
 
 /*This funtion below generates a random color from an array quotes.js
-I manually picked the color so I know they are not too bright and makes the quote hard to read.*/
+I use an array of collor and loop through them with a random number.*/
 function getRandomColor() {
-	let rNum = Math.floor(Math.random() * (color.length - 1) + 1);
+	let rNum = Math.floor(Math.random() * color.length);
 	return (document.body.style.backgroundColor = color[rNum]);
 }
-setInterval(getRandomColor, 5000);
-setInterval(printQuote, 5000);
 
-// This function prints the quotes information to the index.html
+// This function returns the quotes information to the index.html
 function printQuote() {
 	let randomQuoteObject = getRandomQuote();
 	let pQuote = `<p class="quote">${randomQuoteObject.quote}</p>
               <p class="source">${randomQuoteObject.source}`;
-
+	// the following conditonal check for property in the object randomQuoteObject. If property exist, we add it to the quote to be printed.
 	if (randomQuoteObject.citation) {
 		pQuote += `<span class="citation">${randomQuoteObject.citation}</span>`;
 	}
@@ -44,12 +37,11 @@ function printQuote() {
 	getRandomColor();
 	return (document.getElementById("quote-box").innerHTML = pQuote);
 }
+//this code execute the function with a time delay of 5 seconds.
+setInterval(getRandomColor, 5000);
+setInterval(printQuote, 5000);
 
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
- ***/
-
+//send the quotes information to html when the button "show another quote is clicked"
 document
 	.getElementById("load-quote")
 	.addEventListener("click", printQuote, false);
