@@ -7,32 +7,24 @@ project 1 - A Random Quote Generator
 // Check the "Project Resources" section of the project instructions
 // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
-/***
- * `quotes` array
- ***/
-//===>array is in quotes.js
-// let html = document.querySelector(".object");
-
-/***
- * `getRandomQuote` function
- ***/
-//
+//This function generates a random quote from the array in quotes.js
 function getRandomQuote() {
-	let a = quotes.length - 1;
-	let randonNumber = Math.floor(Math.random() * a + 1);
+	//Here i assign the length of the array to quote array.
+	let quoteLength = quotes.length - 1;
+	let randonNumber = Math.floor(Math.random() * quoteLength + 1);
 	return quotes[randonNumber];
 }
-/***
- * getRandomColor function
- ***/
 
+/*This funtion below generates a random color from an array quotes.js
+I manually picked the color so I know they are not too bright and makes the quote hard to read.*/
 function getRandomColor() {
 	let rNum = Math.floor(Math.random() * (color.length - 1) + 1);
 	return (document.body.style.backgroundColor = color[rNum]);
 }
-/***
- * `printQuote` function
- ***/
+setInterval(getRandomColor, 5000);
+setInterval(printQuote, 5000);
+
+// This function prints the quotes information to the index.html
 function printQuote() {
 	let randomQuoteObject = getRandomQuote();
 	let pQuote = `<p class="quote">${randomQuoteObject.quote}</p>
@@ -52,7 +44,7 @@ function printQuote() {
 	getRandomColor();
 	return (document.getElementById("quote-box").innerHTML = pQuote);
 }
-printQuote();
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
@@ -60,4 +52,4 @@ printQuote();
 
 document
 	.getElementById("load-quote")
-	.addEventListener("click", setInterval(printQuote, 5000), true);
+	.addEventListener("click", printQuote, false);

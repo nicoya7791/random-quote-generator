@@ -17,17 +17,21 @@ const quotes = [
 	{
 		quote: "The greatest wealth is to live content with little.",
 		source: "Plato",
+		citation: "https://www.goodreads.com/quotes/420410",
 		profession: "Philosopher",
 	},
 	{
 		quote:
 			"Never discourage anyone who continually makes progress, no matter how slow.",
 		source: "Plato",
+		citation: "https://www.goodreads.com/quotes/61236",
 		profession: "Philosopher",
 	},
 	{
-		quote: "Every accomplishment starts with the decision to try.",
+		quote:
+			"If a free society cannot help the many who are poor, it cannot save the few who are rich.",
 		source: "John F. Kennedy",
+		citation: "https://www.brainyquote.com/quotes/john_f_kennedy_125480",
 		profession: "Politician",
 	},
 	{
@@ -43,7 +47,7 @@ const quotes = [
 			"Float like a butterfly, sting like a bee. The hands can't hit what the eyes can't see.",
 		source: "Muhammad Ali ",
 		year: 1964,
-		profession: "Proffesional Boxer",
+		profession: "Professional Boxer",
 	},
 ];
 
@@ -61,4 +65,10 @@ const color = [
 	"#2F2928",
 	"#408000",
 	"#808000",
+	"#4000ff",
+	"#808080",
+	"#660066",
+	"#ff6347",
+	"#6B291DS",
+	"#B5948E",
 ];
